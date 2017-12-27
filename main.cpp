@@ -54,7 +54,7 @@ int main()
     //LogicCircuits
     {
         SemiSum semiSum(1,0);
-        semiSum.outputs();        
+        semiSum.printOutputs();        
     }
 
     cin.get();

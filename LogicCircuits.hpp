@@ -7,6 +7,10 @@ using namespace std;
 class SemiSum{
     public:
         bool output, carry;
+        SemiSum(){
+            output = false;
+            carry = false;
+        }
         SemiSum(const bool A, const bool B){
             XOr xorOut(A, B);
             And andOut(A, B);
@@ -14,7 +18,7 @@ class SemiSum{
             carry = andOut.output;
         }
 
-        void outputs(){
+        void printOutputs(){
             cout << "\n output = " << output << "\n carry = " << carry << "\n";
         }
 };

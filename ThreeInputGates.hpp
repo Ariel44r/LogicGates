@@ -33,12 +33,12 @@ class NOr3{
 
 class NAnd3{
     public:
-    bool output;
-    NAnd3(const bool A, const bool B, const bool C){
-        And3 and1(A, B, C);
-        Not notOut(and1.output);
-        output = notOut.output;
-    }
+        bool output;
+        NAnd3(const bool A, const bool B, const bool C){
+            And3 and1(A, B, C);
+            Not notOut(and1.output);
+            output = notOut.output;
+        }
 };
 
 class XOr3{
@@ -53,10 +53,10 @@ class XOr3{
 
 class XNOr3{
     public:
-    bool output;
-    XNOr3(const bool A, const bool B, const bool C){
-        XOr3 xor1(A, B, C);
-        Not notOut(xor1.output);
-        output = notOut.output;
-    }
+        bool output;
+        XNOr3(const bool A, const bool B, const bool C){
+            XOr3 xor1(A, B, C);
+            Not notOut(xor1.output);
+            output = notOut.output;
+        }
 };
