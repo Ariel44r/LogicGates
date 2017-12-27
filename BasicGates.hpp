@@ -3,19 +3,72 @@
 class Or{
     public:
         bool output;
-        Or(const bool int1, const bool int2){
-            output = (int1 || int2);
+        Or(const bool A, const bool B){
+            output = (A || B);
         }
-
         ~Or(){}
 };
 
 class And{
     public:
         bool output;
-        And(const bool int1, const bool int2){
-            output = (int1 && int2);
+        And(const bool A, const bool B){
+            output = (A && B);
         }
-
         ~And(){}
+};
+
+class Not{
+    public:
+        bool output;
+        Not(const bool A){
+            output = !A;
+        }
+        ~Not(){}
+};
+
+class Nor{
+    public:
+        bool output;
+        Nor(const bool A, const bool B){
+            Or or1(A, B);
+            Not not1(or1.output);
+            output = not1.output;
+        }
+        ~Nor(){}
+};
+
+class Nand{
+    public:
+    bool output;
+        Nand(const bool A, const bool B){
+            And and1(A, B);
+            Not not1(and1.output);
+            output = not1.output;
+        }
+        ~Nand(){}
+};
+
+class XOr{
+    public:
+        bool output;
+        XOr(const bool A, const bool B){
+            Not notA(A);
+            Not notB(B);
+            And andA(A,notA.output);
+            And andB(notA.output,B);
+            Or orOut(andA.output, andB.output);
+            output = orOut.output;
+        }
+        ~XOr(){}
+};
+
+class XNor{
+    public:
+        bool output;
+        XNor(const bool A, const bool B){
+            XOr xor1(A,B);
+            Not notOut(xor1.output);
+            output = notOut.output;
+        }
 };
