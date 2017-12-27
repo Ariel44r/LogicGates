@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <iostream>
-#include "ThreeInputGates.hpp"
+#include "LogicCircuits.hpp"
 
 using namespace std;
 
@@ -9,6 +9,7 @@ void trueOrFalse(const bool outputGate);
 int main()
 {
 
+/*
     //TwoInputGates
     {
         Or or1(0, 1);
@@ -49,6 +50,13 @@ int main()
             trueOrFalse(xnor3.output);
         }
     }
+*/
+    //LogicCircuits
+    {
+        SemiSum semiSum(1,0);
+        semiSum.outputs();        
+    }
+
     cin.get();
 	return 0;
 }

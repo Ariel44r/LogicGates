@@ -55,7 +55,7 @@ class XOr{
         XOr(const bool A, const bool B){
             Not notA(A);
             Not notB(B);
-            And andA(A,notA.output);
+            And andA(A,notB.output);
             And andB(notA.output,B);
             Or orOut(andA.output, andB.output);
             output = orOut.output;
