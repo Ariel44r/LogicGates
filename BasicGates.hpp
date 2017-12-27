@@ -27,26 +27,26 @@ class Not{
         ~Not(){}
 };
 
-class Nor{
+class NOr{
     public:
         bool output;
-        Nor(const bool A, const bool B){
+        NOr(const bool A, const bool B){
             Or or1(A, B);
             Not not1(or1.output);
             output = not1.output;
         }
-        ~Nor(){}
+        ~NOr(){}
 };
 
-class Nand{
+class NAnd{
     public:
     bool output;
-        Nand(const bool A, const bool B){
+        NAnd(const bool A, const bool B){
             And and1(A, B);
             Not not1(and1.output);
             output = not1.output;
         }
-        ~Nand(){}
+        ~NAnd(){}
 };
 
 class XOr{
