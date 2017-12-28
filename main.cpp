@@ -1,5 +1,4 @@
 #include <iostream>
-#include "LogicCircuits.hpp"
 #include "Latches.hpp"
 
 using namespace std;
@@ -10,7 +9,7 @@ int main()
 {
 
 
-    //TwoInputGates
+    /*    //TwoInputGates
     {
         Or or1(0, 1);
         And and1(1,1);
@@ -29,10 +28,11 @@ int main()
             trueOrFalse(xor1);
             trueOrFalse(xnor1);
         }
-        
-    }
 
-    //ThreeInputGates
+    }
+*/
+
+/*    //ThreeInputGates
     {
         Or3 or3(0,0,1);
         And3 and3(1,1,0);
@@ -50,32 +50,38 @@ int main()
             trueOrFalse(xnor3);
         }
     }
+*/
 
-    //LogicCircuits
-/*    {
+/*    //LogicCircuits
+    {
         SemiSum semiSum(1,0);
         semiSum.printOutputs();
         CompSum compSum(1,1,1);
-        compSum.printOutputs();      
+        compSum.printOutputs();
     }
 */
-    SRLatch srlatch(1,0);
-    srlatch.printParameters();
-    srlatch.resetParameters(0,0);
-    srlatch.printParameters();
-    srlatch.resetParameters(0,1);
-    srlatch.printParameters();
-    srlatch.resetParameters(0,0);
+
+/*    //SRLatches
+    SRLatchNAnd srlatch(1,0);
     srlatch.printParameters();
     srlatch.resetParameters(1,1);
     srlatch.printParameters();
+    srlatch.resetParameters(0,1);
+    srlatch.printParameters();
+    srlatch.resetParameters(1,1);
+    srlatch.printParameters();
+    srlatch.resetParameters(0,0);
+    srlatch.printParameters();
+*/
 
-    cin.get();
-	return 0;
+    //SRLatchControlInput
+    LatchConIn latchconin(1,1,1);
+    latchconin.printParameters();
+
 }
 
- void trueOrFalse(const Gate gate){
-    cout << gate.name << "\n";
+void trueOrFalse(const Gate gate){
+    cout << gate.name;
     if(gate.output){
         cout << "The result is true\n";
     }else {
