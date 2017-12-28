@@ -59,8 +59,16 @@ int main()
         compSum.printOutputs();      
     }
 */
-    SRLatch sr;
-    sr.printParameters();
+    SRLatch srlatch(1,0);
+    srlatch.printParameters();
+    srlatch.resetParameters(0,0);
+    srlatch.printParameters();
+    srlatch.resetParameters(0,1);
+    srlatch.printParameters();
+    srlatch.resetParameters(0,0);
+    srlatch.printParameters();
+    srlatch.resetParameters(1,1);
+    srlatch.printParameters();
 
     cin.get();
 	return 0;
