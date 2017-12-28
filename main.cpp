@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <iostream>
 #include "LogicCircuits.hpp"
+#include "Latches.hpp"
 
 using namespace std;
 
-void trueOrFalse(const bool outputGate);
+void trueOrFalse(const Gate gate);
 
 int main()
 {
 
-/*
+
     //TwoInputGates
     {
         Or or1(0, 1);
@@ -21,13 +22,13 @@ int main()
         XNor xnor1(0,1);
 
         {
-            trueOrFalse(or1.output);
-            trueOrFalse(and1.output);
-            trueOrFalse(not1.output);
-            trueOrFalse(nor1.output);
-            trueOrFalse(nand1.output);
-            trueOrFalse(xor1.output);
-            trueOrFalse(xnor1.output);
+            trueOrFalse(or1);
+            trueOrFalse(and1);
+            trueOrFalse(not1);
+            trueOrFalse(nor1);
+            trueOrFalse(nand1);
+            trueOrFalse(xor1);
+            trueOrFalse(xnor1);
         }
         
     }
@@ -42,27 +43,33 @@ int main()
         XNOr3 xnor3(0,0,1);
 
         {
-            trueOrFalse(or3.output);
-            trueOrFalse(and3.output);
-            trueOrFalse(nor3.output);
-            trueOrFalse(nand3.output);
-            trueOrFalse(xor3.output);
-            trueOrFalse(xnor3.output);
+            trueOrFalse(or3);
+            trueOrFalse(and3);
+            trueOrFalse(nor3);
+            trueOrFalse(nand3);
+            trueOrFalse(xor3);
+            trueOrFalse(xnor3);
         }
     }
-*/
+
     //LogicCircuits
-    {
+/*    {
         SemiSum semiSum(1,0);
-        semiSum.printOutputs();        
+        semiSum.printOutputs();
+        CompSum compSum(1,1,1);
+        compSum.printOutputs();      
     }
+*/
+    SRLatch sr;
+    sr.printParameters();
 
     cin.get();
 	return 0;
 }
 
- void trueOrFalse(const bool outputGate){
-    if(outputGate){
+ void trueOrFalse(const Gate gate){
+    cout << gate.name << "\n";
+    if(gate.output){
         cout << "The result is true\n";
     }else {
         cout << "the result is false\n";
