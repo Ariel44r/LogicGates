@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "BasicGates.hpp"
 
 class Or3 : public Gate{

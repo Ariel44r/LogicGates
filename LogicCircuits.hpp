@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "ThreeInputGates.hpp"
 #include <iostream>
 #include <string>
